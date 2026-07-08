@@ -228,22 +228,7 @@ Throughout this project I gained hands-on experience with:
 - Building repeatable security lab environments
 - Creating professional technical documentation
 
----
 
-# Future Improvements
-
-Planned enhancements include:
-
-- Active Response automation
-- Malware detection testing
-- Sysmon custom rule tuning
-- File Integrity Monitoring (FIM)
-- Vulnerability Detection
-- Sigma Rule integration
-- YARA integration
-- Email alerting
-- Dashboard customization
-- Multi-endpoint enterprise simulation
 
 ---
 
