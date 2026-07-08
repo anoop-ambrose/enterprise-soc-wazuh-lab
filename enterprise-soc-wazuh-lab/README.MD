@@ -136,37 +136,16 @@ SOC Investigation & Alert Analysis
 
 # Technologies Used
 
-## SIEM
+| Category          | Technologies                                                      |
+| ----------------- | ----------------------------------------------------------------- |
+| SIEM              | Wazuh 4.14                                                        |
+| Operating Systems | Ubuntu Server, Ubuntu Desktop, Windows 11, Kali Linux             |
+| Monitoring        | Wazuh Manager, Wazuh Dashboard, Wazuh Agent, Sysmon               |
+| Offensive Tools   | Nmap, Hydra, Gobuster                                             |
+| Services          | Apache2, OpenSSH                                                  |
+| Virtualization    | Oracle VirtualBox                                                 |
+| Logging           | Windows Event Logs, Linux Authentication Logs, Apache Access Logs |
 
-- Wazuh 4.14
-
-## Operating Systems
-
-- Ubuntu Server
-- Ubuntu Desktop
-- Windows 11
-- Kali Linux
-
-## Monitoring
-
-- Wazuh Manager
-- Wazuh Dashboard
-- Wazuh Agents
-- Sysmon (Windows)
-
-## Offensive Tools
-
-- Hydra
-- Gobuster
-- Nmap
-- SSH
-- Apache Logs
-
-## Infrastructure
-
-- Oracle VirtualBox
-- Linux
-- Windows Event Logs
 
 ---
 
