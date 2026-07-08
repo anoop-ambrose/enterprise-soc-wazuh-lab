@@ -47,28 +47,82 @@ The primary objectives of this project were to:
 # Lab Architecture
 
 ```
-                    Internet (Simulated)
+                                                   ENTERPRISE SOC LAB ARCHITECTURE
 
-                          │
+┌────────────────────────────────────────────────────────────────────────────────────────────┐
+│                               Windows 11 Host Machine                                      │
+│                                                                                            │
+│  ┌──────────────────────────────┐                                                          │
+│  │        Web Browser           │                                                          │
+│  │  Accesses Wazuh Dashboard    │                                                          │
+│  │  https://<SENTINEL-IP>       │                                                          │
+│  └───────────────┬──────────────┘                                                          │
+│                  │                                                                         │
+└──────────────────┼─────────────────────────────────────────────────────────────────────────┘
+                   │
+                   ▼
+┌────────────────────────────────────────────────────────────────────────────────────────────┐
+│                              Oracle VirtualBox Environment                                 │
+│                                                                                            │
+│  ┌──────────────────────┐       Attack Traffic        ┌──────────────────────────────┐     │
+│  │  Kali Linux          │────────────────────────────►│ Ubuntu Wazuh Server          │     │
+│  │      OCTOPUS         │                             │         SENTINEL             │     │
+│  │                      │                             │                              │     │
+│  │ Role: Attacker       │                             │ • Wazuh Manager              │     │
+│  │                      │                             │ • Wazuh Indexer              │     │
+│  │ • Nmap               │                             │ • Wazuh Dashboard            │     │
+│  │ • Hydra              │                             │ • API                        │     │
+│  │ • Gobuster           │                             │                              │     │
+│  │ • SSH Attacks        │                             │ Central SIEM Platform        │     │
+│  └──────────────────────┘                             └──────────────┬───────────────┘     │
+│                                                                     ▲                      │
+│                                                                     │                      │
+│                                              Wazuh Agent Logs       │                      │
+│                                         (TCP 1514 / TCP 1515)       │                      │
+│                                                                     │                      │
+│                                                       ┌─────────────┴─────────────┐        │
+│                                                       │ Ubuntu Desktop            │        │
+│                                                       │       CITADEL             │        │
+│                                                       │                           │        │
+│                                                       │ Role: Victim Machine      │        │
+│                                                       │                           │        │
+│                                                       │ • Apache Web Server       │        │
+│                                                       │ • SSH Service             │        │
+│                                                       │ • Wazuh Agent             │        │
+│                                                       │ • Log Collection          │        │
+│                                                       │ • Security Events         │        │
+│                                                       └───────────────────────────┘        │
+└────────────────────────────────────────────────────────────────────────────────────────────┘
 
-                  Kali Linux (Attacker)
-                Reconnaissance & Attacks
-                          │
-                          │
-        ┌─────────────────┴─────────────────┐
-        │                                   │
-        │                                   │
- Ubuntu Web Server                    Windows 11 Endpoint
- (Victim)                             (Monitored Host)
- Wazuh Agent                          Wazuh Agent
-        │                                   │
-        └─────────────────┬─────────────────┘
-                          │
-                  Wazuh Manager
-                Ubuntu Server (SIEM)
-                          │
-                 Wazuh Dashboard
-                   Browser Access
+
+Attack Flow
+───────────
+
+OCTOPUS (Kali)
+        │
+        │  Reconnaissance
+        │  Brute Force
+        │  Directory Enumeration
+        │  HTTP Requests
+        ▼
+CITADEL (Ubuntu Victim)
+        │
+        │  Generates authentication logs
+        │  Apache access logs
+        │  Security events
+        ▼
+Wazuh Agent
+        │
+        ▼
+SENTINEL (Wazuh Server)
+        │
+        │  Correlates events
+        │  Generates alerts
+        ▼
+Windows 11 Browser
+        │
+        ▼
+Wazuh Dashboard Investigation
 ```
 
 ---
