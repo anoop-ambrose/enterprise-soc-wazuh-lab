@@ -98,31 +98,38 @@ The primary objectives of this project were to:
 Attack Flow
 ───────────
 
-OCTOPUS (Kali)
+OCTOPUS (Kali Linux)
         │
         │  Reconnaissance
-        │  Brute Force
+        │  SSH Brute Force
         │  Directory Enumeration
         │  HTTP Requests
         ▼
 CITADEL (Ubuntu Victim)
         │
-        │  Generates authentication logs
-        │  Apache access logs
-        │  Security events
+        │  Apache Logs
+        │  SSH Authentication Logs
+        │  System Security Events
         ▼
 Wazuh Agent
         │
+        │  Forwards Logs & Events
         ▼
-SENTINEL (Wazuh Server)
+SENTINEL (Ubuntu Wazuh Server)
         │
-        │  Correlates events
-        │  Generates alerts
+        │  Wazuh Manager
+        │  Event Correlation
+        │  Rule Matching
+        │  Alert Generation
         ▼
-Windows 11 Browser
+Windows 11 Host Machine
+        │
+        │  Browser (HTTPS)
+        ▼
+Wazuh Dashboard
         │
         ▼
-Wazuh Dashboard Investigation
+SOC Investigation & Alert Analysis
 ```
 
 ---
