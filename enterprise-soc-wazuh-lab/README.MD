@@ -2,10 +2,9 @@
 # Enterprise SOC Lab with Wazuh
 ### Building, Monitoring, and Investigating Security Events in a Realistic Home Lab
 
-![Status](https://img.shields.io/badge/Status-Completed-success)
-![Platform](https://img.shields.io/badge/Platform-Wazuh-blue)
-![Environment](https://img.shields.io/badge/Environment-Ubuntu%20%7C%20Windows%2011%20%7C%20Kali-red)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Status](...)
+![Platform](...)
+![License](...)
 
 ---
 
