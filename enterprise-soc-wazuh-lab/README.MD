@@ -140,11 +140,11 @@ SOC Investigation & Alert Analysis
 | ----------------- | ----------------------------------------------------------------- |
 | SIEM              | Wazuh 4.14                                                        |
 | Operating Systems | Ubuntu Server, Ubuntu Desktop, Windows 11, Kali Linux             |
-| Monitoring        | Wazuh Manager, Wazuh Dashboard, Wazuh Agent, Sysmon               |
+| Monitoring        | Wazuh Manager, Wazuh Dashboard, Wazuh Agent,                      |
 | Offensive Tools   | Nmap, Hydra, Gobuster                                             |
 | Services          | Apache2, OpenSSH                                                  |
 | Virtualization    | Oracle VirtualBox                                                 |
-| Logging           | Windows Event Logs, Linux Authentication Logs, Apache Access Logs |
+| Logging           | Linux Authentication Logs, Apache Access Logs |
 
 
 ---
