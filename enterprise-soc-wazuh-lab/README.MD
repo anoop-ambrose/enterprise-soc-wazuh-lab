@@ -42,6 +42,21 @@ This repository contains the project overview, while each implementation phase i
 
 ---
 
+# Key Takeaways
+
+Throughout this project I gained hands-on experience with:
+
+- Deploying a SIEM from scratch
+- Monitoring Windows and Linux systems
+- Simulating real-world attacks
+- Investigating security alerts
+- Understanding SOC analyst workflows
+- Mapping detections to MITRE ATT&CK
+- Building repeatable security lab environments
+- Creating professional technical documentation
+
+---
+
 # Objectives
 
 The primary objectives of this project were to:
@@ -264,26 +279,8 @@ Enterprise-SOC-Lab/
 ├──resources/
 │
 └── rules/
+
 ```
-
----
-
-# Key Takeaways
-
-Throughout this project I gained hands-on experience with:
-
-- Deploying a SIEM from scratch
-- Monitoring Windows and Linux systems
-- Simulating real-world attacks
-- Investigating security alerts
-- Understanding SOC analyst workflows
-- Mapping detections to MITRE ATT&CK
-- Building repeatable security lab environments
-- Creating professional technical documentation
-
-
-
----
 
 # Author
 
