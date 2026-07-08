@@ -229,13 +229,13 @@ Enterprise-SOC-Lab/
 ├── README.md
 │
 ├── docs/
-│  ├──01-lab architecture.md/
-│  ├──02-agent-integration.md/
-│  ├──03-SSH-brute-force-detection.md/
-│  ├──04-web-login-faliure-detection.md/
-│  ├──05-directory-enumeration-dectection.md/
-│  ├──06-incident-investigation.md/
-│  ├──07-lesson-learned.md/
+│  ├──01-lab architecture.md
+│  ├──02-agent-integration.md
+│  ├──03-SSH-brute-force-detection.md
+│  ├──04-web-login-faliure-detection.md
+│  ├──05-directory-enumeration-dectection.md
+│  ├──06-incident-investigation.md
+│  ├──07-lesson-learned.md
 │
 ├── screenshots/
 │  ├──architecture/
