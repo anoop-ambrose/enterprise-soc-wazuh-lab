@@ -41,19 +41,17 @@ This repository contains the project overview, while each implementation phase i
 | 📸 Screenshots | 100+ |
 
 ---
+## Key Features
 
-# Key Takeaways
+- Enterprise Wazuh SIEM deployment
+- Ubuntu victim monitoring
+- SSH brute-force detection
+- Apache log monitoring
+- Directory enumeration detection
+- MITRE ATT&CK mapping
+- Incident investigation workflow
+- Professional documentation
 
-Throughout this project I gained hands-on experience with:
-
-- Deploying a SIEM from scratch
-- Monitoring Windows and Linux systems
-- Simulating real-world attacks
-- Investigating security alerts
-- Understanding SOC analyst workflows
-- Mapping detections to MITRE ATT&CK
-- Building repeatable security lab environments
-- Creating professional technical documentation
 
 ---
 
@@ -280,6 +278,20 @@ Enterprise-SOC-Lab/
 └── rules/
 
 ```
+# Key Takeaways
+
+Throughout this project I gained hands-on experience with:
+
+- Deploying a SIEM from scratch
+- Monitoring Windows and Linux systems
+- Simulating real-world attacks
+- Investigating security alerts
+- Understanding SOC analyst workflows
+- Mapping detections to MITRE ATT&CK
+- Building repeatable security lab environments
+- Creating professional technical documentation
+
+---
 
 # Author
 
