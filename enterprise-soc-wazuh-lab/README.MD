@@ -29,6 +29,19 @@ This repository contains the project overview, while each implementation phase i
 
 ---
 
+## Project Statistics
+
+| Metric | Value |
+|---------|-------|
+| 📅 Project Duration | 2 Weeks |
+| 💻 Operating Systems | 4 |
+| 🎯 Attack Scenarios | 6 |
+| 🚨 Detection Rules | 20+ |
+| 📄 Documentation Pages | 7 |
+| 📸 Screenshots | 100+ |
+
+---
+
 # Objectives
 
 The primary objectives of this project were to:
