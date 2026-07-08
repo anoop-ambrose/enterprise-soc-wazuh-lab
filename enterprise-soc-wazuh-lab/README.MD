@@ -236,14 +236,13 @@ Each phase contains detailed implementation steps, screenshots, attack execution
 
 # MITRE ATT&CK Coverage
 
-| Technique | ATT&CK ID |
-|-----------|-----------|
-| Brute Force | T1110 |
-| Valid Accounts | T1078 |
-| Active Scanning | T1595 |
-| Network Service Discovery | T1046 |
-| Exploit Public-Facing Application | T1190 |
-| Credential Access Monitoring | T1003 *(Detection Focus)* |
+| Technique                         | ATT&CK ID | Demonstrated In |
+| --------------------------------- | --------- | --------------- |
+| Brute Force                       | T1110     | Phase 3         |
+| Active Scanning                   | T1595     | Phase 5         |
+| Valid Accounts                    | T1078     | Phase 3         |
+| Exploit Public-Facing Application | T1190     | Phase 4         |
+
 
 The project emphasizes detection and monitoring rather than offensive exploitation.
 
