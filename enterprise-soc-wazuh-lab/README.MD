@@ -86,10 +86,9 @@ The lab consists of three virtual machines running inside Oracle VirtualBox:
 The Windows 11 host machine is used to access the Wazuh Dashboard through a web browser. It is **not a Wazuh agent**.
 
 <p align="center">
-  <img src="./screenshots/01-architecture/01-enterprise-soc-lab-architecture.png"
-       alt="Enterprise SOC Lab Architecture"
-       width="100%">
+  <img src="./screenshots/01-architecture/01-enterprise-soc-lab-architecture.png" alt="Enterprise SOC Lab Architecture" width="100%">
 </p>
+
 
 Attack Flow
 ───────────
