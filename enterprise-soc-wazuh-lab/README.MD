@@ -102,7 +102,7 @@ It is <strong>not a Wazuh agent</strong>.
     width="100%">
 </p>
 
----
+```
 
 Attack Flow
 ───────────
@@ -141,7 +141,6 @@ Wazuh Dashboard
 SOC Investigation & Alert Analysis
 
 ```
-
 # Technologies Used
 
 | Category          | Technologies                                                      |
