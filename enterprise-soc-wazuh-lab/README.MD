@@ -263,13 +263,16 @@ Enterprise-SOC-Lab/
 │  ├──07-lesson-learned.md
 │
 ├── screenshots/
-│  ├──architecture/
-│  ├──phase1/
-│  ├──phase2/
-│  ├──phase3/
-│  ├──phase4/
-│  ├──phase5/
-│  ├──phase6/
+│  ├──01-architecture/
+│  ├──02-deployment/
+│  ├──03-agents/
+│  ├──04-reconnaissance/
+│  ├──05-ssh-bruteforce/
+│  ├──06-apache-server-monitoring/
+│  ├──07-web-enumeration/
+|  ├──08-invetigation/
+|  ├──09-MITRE/
+|  ├──10-dashboard/
 │
 ├──diagrams/
 │
