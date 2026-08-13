@@ -75,7 +75,7 @@ The primary objectives of this project were to:
 ```
                                                    ENTERPRISE SOC LAB ARCHITECTURE
 
-
+![Enterprise SOC Lab Architecture](screenshots/01-architecture/01-enterprise-soc-lab-architecture.png)
 
 
 Attack Flow
