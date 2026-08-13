@@ -72,7 +72,6 @@ The primary objectives of this project were to:
 
 # Lab Architecture
 
-```
                                                    ENTERPRISE SOC LAB ARCHITECTURE
 
 # Lab Architecture
@@ -102,8 +101,7 @@ It is <strong>not a Wazuh agent</strong>.
     alt="Enterprise SOC Lab Architecture"
     width="100%">
 </p>
-
-
+---
 Attack Flow
 ───────────
 
