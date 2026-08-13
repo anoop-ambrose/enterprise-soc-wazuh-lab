@@ -79,14 +79,28 @@ The primary objectives of this project were to:
 
 The lab consists of three virtual machines running inside Oracle VirtualBox:
 
-- **OCTOPUS** — Kali Linux attacker
-- **SENTINEL** — Ubuntu Wazuh SIEM server
-- **CITADEL** — Ubuntu monitored victim
+<h2>Lab Architecture</h2>
 
-The Windows 11 host machine is used to access the Wazuh Dashboard through a web browser. It is **not a Wazuh agent**.
+<p>
+The lab consists of three virtual machines running inside Oracle VirtualBox:
+</p>
+
+<ul>
+  <li><strong>OCTOPUS</strong> — Kali Linux attacker</li>
+  <li><strong>SENTINEL</strong> — Ubuntu Wazuh SIEM server</li>
+  <li><strong>CITADEL</strong> — Ubuntu monitored victim</li>
+</ul>
+
+<p>
+The Windows 11 host machine is used to access the Wazuh Dashboard through a web browser.
+It is <strong>not a Wazuh agent</strong>.
+</p>
 
 <p align="center">
-  <img src="./screenshots/01-architecture/01-enterprise-soc-lab-architecture.png" alt="Enterprise SOC Lab Architecture">
+  <img
+    src="./screenshots/01-architecture/01-enterprise-soc-lab-architecture.png"
+    alt="Enterprise SOC Lab Architecture"
+    width="100%">
 </p>
 
 
