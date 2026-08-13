@@ -38,7 +38,7 @@ This repository contains the project overview, while each implementation phase i
 | 🎯 Attack Scenarios | 6 |
 | 🚨 Detection Rules | 20+ |
 | 📄 Documentation Pages | 7 |
-| 📸 Screenshots | 100+ |
+| 📸 Screenshots | 30 |
 
 ---
 ## Key Features
