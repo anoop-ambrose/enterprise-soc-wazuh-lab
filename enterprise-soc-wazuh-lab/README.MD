@@ -274,8 +274,6 @@ Enterprise-SOC-Lab/
 |  ├──09-MITRE/
 |  ├──10-dashboard/
 │
-├──diagrams/
-│
 ├──resources/
 │
 └── rules/
