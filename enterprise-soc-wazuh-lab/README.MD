@@ -75,50 +75,7 @@ The primary objectives of this project were to:
 ```
                                                    ENTERPRISE SOC LAB ARCHITECTURE
 
-┌────────────────────────────────────────────────────────────────────────────────────────────┐
-│                               Windows 11 Host Machine                                      │
-│                                                                                            │
-│  ┌──────────────────────────────┐                                                          │
-│  │        Web Browser           │                                                          │
-│  │  Accesses Wazuh Dashboard    │                                                          │
-│  │  https://<SENTINEL-IP>       │                                                          │
-│  └───────────────┬──────────────┘                                                          │
-│                  │                                                                         │
-└──────────────────┼─────────────────────────────────────────────────────────────────────────┘
-                   │
-                   ▼
-┌────────────────────────────────────────────────────────────────────────────────────────────┐
-│                              Oracle VirtualBox Environment                                 │
-│                                                                                            │
-│  ┌──────────────────────┐       Attack Traffic        ┌──────────────────────────────┐     │
-│  │  Kali Linux          │────────────────────────────►│ Ubuntu Wazuh Server          │     │
-│  │      OCTOPUS         │                             │         SENTINEL             │     │
-│  │                      │                             │                              │     │
-│  │ Role: Attacker       │                             │ • Wazuh Manager              │     │
-│  │                      │                             │ • Wazuh Indexer              │     │
-│  │ • Nmap               │                             │ • Wazuh Dashboard            │     │
-│  │ • Hydra              │                             │ • API                        │     │
-│  │ • Gobuster           │                             │                              │     │
-│  │ • SSH Attacks        │                             │ Central SIEM Platform        │     │
-│  └──────────────────────┘                             └──────────────┬───────────────┘     │
-│                                                                     ▲                      │
-│                                                                     │                      │
-│                                              Wazuh Agent Logs       │                      │
-│                                         (TCP 1514 / TCP 1515)       │                      │
-│                                                                     │                      │
-│                                                       ┌─────────────┴─────────────┐        │
-│                                                       │ Ubuntu Desktop            │        │
-│                                                       │       CITADEL             │        │
-│                                                       │                           │        │
-│                                                       │ Role: Victim Machine      │        │
-│                                                       │                           │        │
-│                                                       │ • Apache Web Server       │        │
-│                                                       │ • SSH Service             │        │
-│                                                       │ • Wazuh Agent             │        │
-│                                                       │ • Log Collection          │        │
-│                                                       │ • Security Events         │        │
-│                                                       └───────────────────────────┘        │
-└────────────────────────────────────────────────────────────────────────────────────────────┘
+
 
 
 Attack Flow
