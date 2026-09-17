@@ -13,3 +13,96 @@ The lab consists of three primary virtual machines:
 The architecture demonstrates the complete flow from attack activity and endpoint telemetry to centralized detection, investigation, and MITRE ATT&CK mapping.
 
 ---
+# 3. Machine Roles
+## 3.1 OCTOPUS — Attacker
+
+Operating System: Kali Linux
+
+OCTOPUS is the security testing machine used to generate controlled reconnaissance and attack activity against the authorized lab environment.
+
+Tools Used
+Nmap
+Nikto
+Gobuster
+Hydra
+cURL
+Primary Activities
+Network reconnaissance
+Service enumeration
+Web reconnaissance
+Directory enumeration
+SSH authentication testing
+HTTP request generation
+
+---
+
+## 3.2 CITADEL — Monitored Endpoint
+
+Operating System: Ubuntu
+
+CITADEL is the monitored endpoint in the SOC environment.
+
+Components
+Wazuh Agent
+Apache HTTP Server
+SSH
+
+The endpoint generates authentication, web-server, and system security logs.
+
+The Wazuh Agent collects relevant security telemetry and forwards it to the Wazuh Manager running on SENTINEL.
+
+Primary Activities
+Generate endpoint telemetry
+Record SSH authentication events
+Record Apache web-server activity
+Provide logs for security investigation
+Forward security events to Wazuh
+
+---
+
+## 3.3 SENTINEL — Wazuh Server
+
+Operating System: Ubuntu
+
+SENTINEL acts as the centralized security monitoring and analysis server.
+
+Components
+Wazuh Manager
+Wazuh Dashboard
+Alert processing
+Security-event monitoring
+MITRE ATT&CK visibility
+
+SENTINEL receives security telemetry from CITADEL, processes the events through Wazuh, and provides the analyst with a centralized interface for detection and investigation.
+
+---
+
+# 4. Security Monitoring Architecture
+
+The monitoring process follows this sequence:
+
+OCTOPUS
+Attacker
+    │
+    │ Attack / Reconnaissance Activity
+    ▼
+CITADEL
+Monitored Endpoint
+    │
+    │ Logs & Security Telemetry
+    ▼
+Wazuh Agent
+    │
+    │ Event Forwarding
+    ▼
+SENTINEL
+Wazuh Manager
+    │
+    │ Alert Processing
+    ▼
+Wazuh Dashboard
+    │
+    ├── Security Alerts
+    ├── Security Events
+    └── MITRE ATT&CK
+
