@@ -219,9 +219,9 @@ This telemetry forms the foundation for the detection and investigation scenario
 Evidence Directory
 screenshots/
 └── 02-agent-integration/
-    ├── 01-wazuh-agent-service.png
-    ├── 02-agent-registration.png
-    └── 03-agent-active-dashboard.png
+  ├── 01-wazuh-agent-service.png
+  ├── 02-agent-registration.png
+  └── 03-agent-active-dashboard.png
 
 ---
 ## 13. Phase Result
