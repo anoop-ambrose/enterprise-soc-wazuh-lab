@@ -200,3 +200,15 @@ The architecture diagram provides a visual representation of the lab environment
 
 ```text
 screenshots/01-architecture/01-enterprise-soc-lab-architecture.png
+
+text'''
+
+12. Architecture Outcome
+
+The completed lab architecture provides a controlled environment for security testing and defensive monitoring.
+
+OCTOPUS generates controlled security activity, CITADEL provides endpoint and application telemetry, and SENTINEL provides centralized Wazuh monitoring and analysis.
+
+The Windows 11 host provides browser-based access to the Wazuh Dashboard without functioning as a monitored Wazuh Agent.
+
+This architecture forms the foundation for the subsequent detection, investigation, and MITRE ATT&CK analysis documented in the project.
