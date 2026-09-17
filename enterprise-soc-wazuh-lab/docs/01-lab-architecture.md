@@ -196,8 +196,9 @@ The architecture diagram provides a visual representation of the lab environment
 
 `01-enterprise-soc-lab-architecture.png`
 
+---
 
-12. Architecture Outcome
+## 12. Architecture Outcome
 
 The completed lab architecture provides a controlled environment for security testing and defensive monitoring.
 
