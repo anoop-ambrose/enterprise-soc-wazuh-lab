@@ -54,4 +54,4 @@ The architecture demonstrates the complete flow from attack activity and endpoin
                          │  MITRE ATT&CK         │
                          └───────────────────────┘
 
-
+---
