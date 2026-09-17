@@ -104,7 +104,7 @@ It is <strong>not a Wazuh agent</strong>.
 
 ```
 
-Attack Flow
+## Attack Flow
 ───────────
 
 OCTOPUS (Kali Linux)
