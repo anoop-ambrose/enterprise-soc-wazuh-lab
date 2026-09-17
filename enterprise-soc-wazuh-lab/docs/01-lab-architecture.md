@@ -77,32 +77,43 @@ SENTINEL receives security telemetry from CITADEL, processes the events through 
 
 ---
 
-# 4. Security Monitoring Architecture
+# ## 4. Security Monitoring Architecture
 
 The monitoring process follows this sequence:
 
-OCTOPUS
-Attacker
-    │
-    │ Attack / Reconnaissance Activity
-    ▼
-CITADEL
-Monitored Endpoint
-    │
-    │ Logs & Security Telemetry
-    ▼
-Wazuh Agent
-    │
-    │ Event Forwarding
-    ▼
-SENTINEL
-Wazuh Manager
-    │
-    │ Alert Processing
-    ▼
-Wazuh Dashboard
-    │
-    ├── Security Alerts
-    ├── Security Events
-    └── MITRE ATT&CK
+```text
+                         OCTOPUS
+                          Attacker
+                             │
+                             │
+              Attack / Reconnaissance Activity
+                             │
+                             ▼
+                         CITADEL
+                    Monitored Endpoint
+                             │
+                             │
+                  Logs & Security Telemetry
+                             │
+                             ▼
+                       Wazuh Agent
+                             │
+                             │
+                       Event Forwarding
+                             │
+                             ▼
+                         SENTINEL
+                       Wazuh Manager
+                             │
+                             │
+                       Alert Processing
+                             │
+                             ▼
+                     Wazuh Dashboard
+                             │
+                ┌────────────┼────────────┐
+                │            │            │
+                ▼            ▼            ▼
+             Security     Security      MITRE
+              Alerts       Events      ATT&CK
 
