@@ -268,3 +268,25 @@ Alert Investigation
 MITRE ATT&CK Mapping
       ↓
 Security Findings
+
+Each stage contributes to the overall SOC investigation process.
+
+The offensive activities generate observable events, while the Wazuh monitoring infrastructure provides centralized visibility and detection.
+
+-----
+
+8. Attack-to-Detection Flow
+
+The relationship between the attacker, monitored endpoint, and SIEM can be summarized as:
+
+Stage	Activity	System
+1	Reconnaissance	OCTOPUS
+2	Service Enumeration	OCTOPUS
+3	Attack Simulation	OCTOPUS
+4	Event Generation	CITADEL
+5	Log Collection	Wazuh Agent
+6	Event Processing	SENTINEL
+7	Detection	Wazuh Manager
+8	Investigation	Wazuh Dashboard
+9	ATT&CK Mapping	Wazuh Dashboard
+10	Findings Documentation	SOC Analyst
