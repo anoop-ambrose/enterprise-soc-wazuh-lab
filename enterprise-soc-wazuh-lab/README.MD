@@ -97,7 +97,7 @@ It is <strong>not a Wazuh agent</strong>.
 
 <p align="center">
   <img
-    src="/assests/architecture/security-monitoring-architecture.png"
+    src="screenshots/01-architecture/01-enterprise-soc-lab-architecture.png"
     alt="Enterprise SOC Lab Architecture"
     width="100%">
 </p>
