@@ -77,7 +77,9 @@ SENTINEL receives security telemetry from CITADEL, processes the events through 
 
 ---
 
-# ## 4. Security Monitoring Architecture
+# 4. Security Monitoring Architecture
+
+## 4. Security Monitoring Architecture
 
 The monitoring process follows this sequence:
 
@@ -116,4 +118,4 @@ The monitoring process follows this sequence:
                 ▼            ▼            ▼
              Security     Security      MITRE
               Alerts       Events      ATT&CK
-
+----
