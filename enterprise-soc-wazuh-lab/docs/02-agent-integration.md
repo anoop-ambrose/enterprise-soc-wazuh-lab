@@ -36,7 +36,9 @@ After installation, the Wazuh Agent service was enabled and started.
 
 ### Verify Wazuh Agent Service
 
-Run the following command on CITADEL: ### $ sudo systemctl status wazuh-agent
+Run the following command on CITADEL: 
+
+### $ sudo systemctl status wazuh-agent
  
 The service status was checked to confirm that the Wazuh Agent was running correctly.
 
