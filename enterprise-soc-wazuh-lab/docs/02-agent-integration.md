@@ -39,6 +39,7 @@ After installation, the Wazuh Agent service was enabled and started.
 Run the following command on CITADEL:  $ sudo systemctl status wazuh-agent
  
 The service status was checked to confirm that the Wazuh Agent was running correctly.
+
 ---
 ## 4. Agent Registration
 
@@ -53,6 +54,7 @@ After applying the configuration, the agent service was restarted.
 $ sudo systemctl restart wazuh-agent
 
 The agent configuration and service state were then verified before continuing with the integration validation.
+
 ---
 ## 5. Agent Connectivity Verification
 
@@ -67,6 +69,7 @@ $ sudo /var/ossec/bin/agent_control -l
 The command displays the agents registered with the Wazuh Manager.
 
 The expected result is for CITADEL to appear in the registered-agent list.
+
 ---
 ## 6. Agent Status in Wazuh Dashboard
 
@@ -83,6 +86,7 @@ Operating system
 Last Keep Alive
 
 CITADEL appearing as Active confirms that the Wazuh Agent is communicating with the Wazuh Manager.
+
 --- 
 ## 7. Agent Integration Evidence
 ### Screenshot 01 — Wazuh Agent Service
@@ -100,6 +104,7 @@ Screenshot:
 01-wazuh-agent-service.png
 
 Location: screenshots/02-agent-integration/01-wazuh-agent-service.png
+
 ---
 ### Screenshot 02 — Agent Registration
 
@@ -117,6 +122,7 @@ Screenshot:
 02-agent-registration.png
 
 Location: screenshots/02-agent-integration/02-agent-registration.png
+
 ---
 ### Screenshot 03 — Active Agent in Wazuh Dashboard
 
@@ -135,6 +141,7 @@ Screenshot:
 03-agent-active-dashboard.png
 
 Location: screenshots/02-agent-integration/03-agent-active-dashboard.png
+
 ---
 ## 8. Telemetry Collection
 
@@ -154,6 +161,7 @@ Apache error logs
 Web-server activity
 
 These telemetry sources provide the event data required for centralized monitoring and security detection.
+
 ---
 ## 9. Agent Integration Validation
 
@@ -169,6 +177,7 @@ The integration was validated using the following checks:
 | Endpoint telemetry available          | Yes             |
 
 Successful completion of these checks confirms that CITADEL is integrated into the Wazuh monitoring environment.
+
 ---
 ## 10. Troubleshooting
 
@@ -191,6 +200,7 @@ Check Wazuh Agent Logs
 Run on CITADEL: $ sudo tail -f /var/ossec/logs/ossec.log
 
 These checks help identify issues related to the agent service, registration, configuration, or communication with the Wazuh Manager.
+
 ---
 11. Integration Outcome
 
@@ -208,6 +218,7 @@ Process activity
 Other configured endpoint telemetry
 
 This telemetry forms the foundation for the detection and investigation scenarios documented in the following phases.
+
 ---
 ## 12. Evidence Summary
 | Screenshot                      | Evidence                                                |
