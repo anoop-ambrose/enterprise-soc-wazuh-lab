@@ -19,7 +19,6 @@ The lab simulates an attacker, a monitored endpoint, centralized security monito
 ```text
 
 
----
 
                     OCTOPUS
                   Kali Linux
@@ -48,7 +47,6 @@ The lab simulates an attacker, a monitored endpoint, centralized security monito
        Alerts      Events      MITRE
                                 ATT&CK
 
----
 
 ## Roles of Each Machine
 ### OCTOPUS — Attacker
@@ -100,7 +98,7 @@ Investigate security alerts.
 Map detected activity to MITRE ATT&CK.
 Document the complete SOC investigation workflow.
 
----
+
 
 ## Security Monitoring Workflow
 
@@ -122,7 +120,7 @@ MITRE ATT&CK Mapping
       ↓
 Security Findings
 
----
+
 
 ## Lab Outcome
 
