@@ -17,6 +17,10 @@ The lab simulates an attacker, a monitored endpoint, centralized security monito
 ## Architecture Flow
 
 ```text
+
+
+---
+
                     OCTOPUS
                   Kali Linux
                    Attacker
