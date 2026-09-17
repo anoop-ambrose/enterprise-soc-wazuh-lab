@@ -196,16 +196,6 @@ The architecture diagram provides a visual representation of the lab environment
 
 `01-enterprise-soc-lab-architecture.png`
 
-**Location:**
-
-<p align="center">
-  <a href="../screenshots/01-architecture/01-enterprise-soc-lab-architecture.png">
-    <img
-      src="../screenshots/01-architecture/01-enterprise-soc-lab-architecture.png"
-      alt="Enterprise SOC Lab Architecture"
-      width="100%">
-  </a>
-</p>
 
 12. Architecture Outcome
 
