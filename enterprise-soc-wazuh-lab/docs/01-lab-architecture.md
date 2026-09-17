@@ -16,7 +16,7 @@ The architecture demonstrates the complete flow from attack activity and endpoin
 
 ## 2. Lab Architecture
 
-'
+'''text
                          ┌───────────────────────┐
                          │       OCTOPUS         │
                          │      Kali Linux       │
