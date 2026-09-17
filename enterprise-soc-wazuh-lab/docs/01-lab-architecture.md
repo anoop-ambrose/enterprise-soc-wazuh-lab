@@ -16,7 +16,7 @@ The architecture demonstrates the complete flow from attack activity and endpoin
 
 ## 2. Lab Architecture
 
-```text
+'
                          ┌───────────────────────┐
                          │       OCTOPUS         │
                          │      Kali Linux       │
@@ -31,8 +31,8 @@ The architecture demonstrates the complete flow from attack activity and endpoin
                          │        Ubuntu         │
                          │                       │
                          │    Wazuh Agent        │
-                         │    Apache HTTP Server  │
-                         │    SSH Service         │
+                         │    Apache HTTP Server │
+                         │    SSH Service        │
                          └───────────┬───────────┘
                                      │
                               Security Events
