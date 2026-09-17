@@ -216,14 +216,6 @@ This telemetry forms the foundation for the detection and investigation scenario
 | `02-agent-registration.png`     | CITADEL registered with the Wazuh Manager               |
 | `03-agent-active-dashboard.png` | CITADEL shown as an active agent in the Wazuh Dashboard |
 ---
-Evidence Directory
-screenshots/
-└── 02-agent-integration/
-  ├── 01-wazuh-agent-service.png
-  ├── 02-agent-registration.png
-  └── 03-agent-active-dashboard.png
-
----
 ## 13. Phase Result
 
 CITADEL was successfully integrated with the centralized Wazuh monitoring infrastructure.
