@@ -1,60 +1,39 @@
-# 01 — SOC Lab Architecture
+# 01 — Lab Architecture
 
 ## 1. Overview
 
-This project implements an enterprise-style Security Operations Center (SOC) lab using VirtualBox and Wazuh.
+This project implements an enterprise-style Security Operations Center (SOC) lab using Oracle VirtualBox and Wazuh.
 
-The lab simulates a controlled security environment consisting of an attacker machine, a monitored Ubuntu endpoint, and a centralized Wazuh security monitoring server.
+The lab consists of three virtual machines:
 
-The environment demonstrates the complete security monitoring lifecycle:
+- **OCTOPUS** — Kali Linux attacker
+- **CITADEL** — Ubuntu monitored endpoint
+- **SENTINEL** — Ubuntu Wazuh server
 
-**Attack → Telemetry → Detection → Investigation → MITRE ATT&CK**
+A Windows 11 host machine is used to run the VirtualBox environment and access the Wazuh Dashboard through a web browser.
 
-The lab is designed to demonstrate how offensive security activity can generate endpoint and application telemetry that is collected, processed, detected, and investigated through a centralized SIEM platform.
+The Windows host machine is not configured as a Wazuh Agent.
 
 ---
 
 ## 2. Lab Architecture
 
-The SOC lab consists of three virtual machines and one host machine used to access the monitoring interface.
+The following architecture illustrates the complete SOC lab environment, including the attacker machine, monitored endpoint, Wazuh server, dashboard access, network environment, and security monitoring components.
 
-### Virtual Machines
-
-| Machine | Operating System | Role |
-|---|---|---|
-| **OCTOPUS** | Kali Linux | Attacker / Security Testing |
-| **CITADEL** | Ubuntu | Monitored Endpoint |
-| **SENTINEL** | Ubuntu | Wazuh Server / SIEM |
-
-### Host Machine
-
-The Windows host machine is used to run the VirtualBox environment and access the Wazuh Dashboard through a web browser.
-
-**The Windows host is not configured as a Wazuh Agent.**
+<p align="center">
+  <img
+    src="../screenshots/01-architecture/01-enterprise-soc-lab-architecture.png"
+    alt="Enterprise SOC Lab Architecture"
+    width="100%">
+</p>
 
 ---
 
-### Architecture Diagram
-
-![Security Monitoring Architecture](../assets/architecture/security-monitoring-architecture.png)
-
-**Architecture Flow:**
-
-**OCTOPUS → CITADEL → Wazuh Agent → SENTINEL → Wazuh Dashboard**
-
-The Windows host accesses the Wazuh Dashboard through a web browser but does not participate as a monitored Wazuh endpoint.
-
----
-
-## 3. Machine Roles
-
-### 3.1 OCTOPUS — Attacker
+## 3. OCTOPUS — Attacker
 
 **Operating System:** Kali Linux
 
-OCTOPUS is the attacker and security-testing machine used to generate controlled reconnaissance and attack activity against the authorized lab environment.
-
-The machine is used to simulate activities that generate observable security events on the monitored endpoint.
+OCTOPUS is the attacker and security-testing machine used to generate controlled reconnaissance and attack activity against the monitored endpoint.
 
 ### Tools Used
 
@@ -64,7 +43,7 @@ The machine is used to simulate activities that generate observable security eve
 - Hydra
 - cURL
 
-### Primary Activities
+### Activities
 
 - Network reconnaissance
 - Service enumeration
@@ -73,220 +52,151 @@ The machine is used to simulate activities that generate observable security eve
 - SSH authentication testing
 - HTTP request generation
 
-OCTOPUS represents the offensive side of the lab and provides the activity that the defensive monitoring environment must detect and investigate.
+OCTOPUS represents the offensive security component of the lab and is used to generate activity that can be observed and analyzed through the monitoring infrastructure.
 
 ---
 
-### 3.2 CITADEL — Monitored Endpoint
+## 4. CITADEL — Monitored Endpoint
 
 **Operating System:** Ubuntu
 
 CITADEL is the monitored endpoint in the SOC environment.
 
-The system runs the Wazuh Agent and provides endpoint and application telemetry to the centralized Wazuh Manager.
+The Wazuh Agent is installed on CITADEL and is responsible for collecting relevant endpoint and application telemetry.
 
-### Components
+### Services and Components
 
 - Wazuh Agent
 - Apache HTTP Server
-- SSH
+- OpenSSH
+- System logging
 
-### Primary Activities
+### Telemetry Sources
 
-- Generate endpoint security telemetry
-- Record SSH authentication events
-- Record Apache web-server activity
-- Generate system security logs
-- Provide logs for investigation
-- Forward security events to SENTINEL
+- SSH authentication logs
+- Apache access logs
+- Apache error logs
+- System logs
+- Security events
 
-CITADEL acts as the primary monitored endpoint where attack activity is observed and recorded.
+The collected telemetry is forwarded from CITADEL to the Wazuh Manager running on SENTINEL for centralized processing and monitoring.
 
 ---
 
-### 3.3 SENTINEL — Wazuh Server
+## 5. SENTINEL — Wazuh Server
 
 **Operating System:** Ubuntu
 
 SENTINEL is the centralized security monitoring server for the lab.
 
-It receives security telemetry from CITADEL through the Wazuh Agent and processes the events using Wazuh.
+It provides the core Wazuh infrastructure used to process, analyze, and monitor security events received from CITADEL.
 
 ### Components
 
 - Wazuh Manager
+- Wazuh Indexer
 - Wazuh Dashboard
-- Alert processing
-- Security-event monitoring
+- Filebeat
+
+### Functions
+
+- Security-event processing
+- Alert generation
+- Event correlation
+- Centralized security monitoring
+- Alert investigation
 - MITRE ATT&CK visibility
 
-### Primary Functions
-
-- Receive endpoint telemetry
-- Process security events
-- Generate security alerts
-- Provide centralized event visibility
-- Support alert investigation
-- Provide MITRE ATT&CK contextualization
-
-SENTINEL acts as the central point for security monitoring and investigation.
+SENTINEL acts as the central point for security-event analysis and monitoring within the lab.
 
 ---
 
-### 3.4 Windows Host — Dashboard Access
+## 6. Windows 11 Host Machine
 
-**Operating System:** Windows
+The Windows 11 system is the physical host machine used to run the VirtualBox environment.
 
-The Windows machine is the physical host system running the VirtualBox environment.
+It is also used to access the Wazuh Dashboard through a web browser.
 
-It is used primarily for:
+### Purpose
 
-- Running the VirtualBox environment
-- Accessing the Wazuh Dashboard through a web browser
-- Viewing security alerts and events
-- Performing SOC analysis through the dashboard
+- Run the VirtualBox environment
+- Access the Wazuh Dashboard
+- Review security alerts
+- Investigate security events
+- Analyze MITRE ATT&CK information
 
-### Important
-
-The Windows host is **not a Wazuh Agent** in this lab.
-
-The monitored endpoint is:
-
-**CITADEL — Ubuntu**
-
-The Windows host only provides browser-based access to the Wazuh Dashboard hosted on SENTINEL.
+The Windows 11 host is not configured as a Wazuh Agent and is not part of the monitored endpoint infrastructure.
 
 ---
 
-## 4. Security Monitoring Architecture
+## 7. Network Environment
 
-The security monitoring process follows the flow from attack activity to centralized detection and investigation.
+The lab uses a VirtualBox network environment that allows communication between the attacker, monitored endpoint, and Wazuh server.
 
-![Security Monitoring Architecture](../assets/architecture/security-monitoring-architecture.png)
+The primary communication paths within the lab are:
 
-### Monitoring Flow
+- OCTOPUS communicates with CITADEL during reconnaissance and attack simulations.
+- CITADEL forwards security telemetry through the Wazuh Agent to SENTINEL.
+- The Windows 11 host accesses the Wazuh Dashboard through a web browser.
 
-**1. OCTOPUS — Attack Activity**
-
-OCTOPUS performs controlled reconnaissance and security-testing activities against CITADEL.
-
-↓
-
-**2. CITADEL — Endpoint Telemetry**
-
-CITADEL receives the activity and generates relevant authentication, web-server, and system logs.
-
-↓
-
-**3. Wazuh Agent — Event Collection**
-
-The Wazuh Agent running on CITADEL collects relevant endpoint security telemetry.
-
-↓
-
-**4. SENTINEL — Event Processing**
-
-The Wazuh Manager receives and processes the events from CITADEL.
-
-↓
-
-**5. Wazuh Dashboard — Security Monitoring**
-
-The Wazuh Dashboard provides centralized visibility into:
-
-- Security alerts
-- Security events
-- Event details
-- Detection rules
-- MITRE ATT&CK mappings
-
-↓
-
-**6. Analyst Investigation**
-
-The analyst reviews the available telemetry and alerts to understand the activity, identify the affected endpoint and source, and document the findings.
+IP addresses can change depending on the current VirtualBox network configuration. Therefore, the architecture documentation focuses on the functional roles of the systems rather than relying on static IP addresses.
 
 ---
 
-## 5. Security Monitoring Components
+## 8. Security Monitoring Components
 
-| Component | Machine | Purpose |
+| Component | System | Purpose |
 |---|---|---|
-| Kali Linux | OCTOPUS | Attack and reconnaissance |
-| Ubuntu | CITADEL | Monitored endpoint |
-| Wazuh Agent | CITADEL | Endpoint telemetry collection |
-| Apache HTTP Server | CITADEL | Web-server monitoring |
-| SSH | CITADEL | Authentication monitoring |
-| Wazuh Manager | SENTINEL | Event processing and detection |
-| Wazuh Dashboard | SENTINEL | Security monitoring and investigation |
-| Windows Host | Host Machine | Browser access to Wazuh Dashboard |
-| MITRE ATT&CK | SENTINEL / Dashboard | Attack-technique contextualization |
+| Wazuh Agent | CITADEL | Collects endpoint security telemetry |
+| Apache HTTP Server | CITADEL | Generates web-server telemetry |
+| OpenSSH | CITADEL | Provides SSH authentication activity |
+| System Logs | CITADEL | Provides endpoint security events |
+| Wazuh Manager | SENTINEL | Processes security events and generates alerts |
+| Wazuh Indexer | SENTINEL | Stores and indexes security events |
+| Wazuh Dashboard | SENTINEL | Provides centralized monitoring and investigation |
+| Filebeat | SENTINEL | Handles event forwarding within the Wazuh stack |
+| Web Browser | Windows 11 Host | Provides access to the Wazuh Dashboard |
 
 ---
 
-## 6. Project Objectives
+## 9. Lab Roles
 
-The main objectives of this lab are:
-
-- Deploy a centralized Wazuh SIEM environment.
-- Configure an Ubuntu endpoint for centralized monitoring.
-- Integrate the CITADEL endpoint with Wazuh.
-- Monitor SSH authentication activity.
-- Monitor Apache web-server activity.
-- Perform network reconnaissance.
-- Perform service enumeration.
-- Perform web reconnaissance.
-- Perform directory enumeration.
-- Simulate controlled security attacks.
-- Detect suspicious activity through Wazuh.
-- Investigate security alerts.
-- Analyze endpoint and application logs.
-- Map detected activity to MITRE ATT&CK.
-- Document the complete SOC investigation workflow.
+| System | Operating System | Role |
+|---|---|---|
+| **OCTOPUS** | Kali Linux | Attacker / Security Testing |
+| **CITADEL** | Ubuntu | Monitored Endpoint |
+| **SENTINEL** | Ubuntu | Wazuh Manager / SIEM Server |
+| **Windows 11 Host** | Windows 11 | VirtualBox Host / Dashboard Access |
 
 ---
 
-## 7. Security Monitoring Workflow
+## 10. Monitoring Objectives
 
-The lab is organized around the following security monitoring workflow:
+The architecture is designed to provide visibility into security activity occurring within the monitored environment.
+
+The primary monitoring objectives include:
+
+- Network reconnaissance monitoring
+- Service enumeration monitoring
+- SSH authentication monitoring
+- Apache web-server monitoring
+- Web enumeration monitoring
+- Endpoint security-event collection
+- Wazuh alert generation
+- Security-event investigation
+- MITRE ATT&CK contextualization
+
+---
+
+## 11. Architecture Evidence
+
+The architecture diagram provides a visual representation of the lab environment and its major components.
+
+**Screenshot:**
+
+`01-enterprise-soc-lab-architecture.png`
+
+**Location:**
 
 ```text
-Reconnaissance
-      ↓
-Service Enumeration
-      ↓
-SSH Brute-Force Simulation
-      ↓
-Apache / Web Monitoring
-      ↓
-Web Enumeration
-      ↓
-Wazuh Detection
-      ↓
-Alert Investigation
-      ↓
-MITRE ATT&CK Mapping
-      ↓
-Security Findings
-
-Each stage contributes to the overall SOC investigation process.
-
-The offensive activities generate observable events, while the Wazuh monitoring infrastructure provides centralized visibility and detection.
-
------
-
-8. Attack-to-Detection Flow
-
-The relationship between the attacker, monitored endpoint, and SIEM can be summarized as:
-
-Stage	Activity	System
-1	Reconnaissance	OCTOPUS
-2	Service Enumeration	OCTOPUS
-3	Attack Simulation	OCTOPUS
-4	Event Generation	CITADEL
-5	Log Collection	Wazuh Agent
-6	Event Processing	SENTINEL
-7	Detection	Wazuh Manager
-8	Investigation	Wazuh Dashboard
-9	ATT&CK Mapping	Wazuh Dashboard
-10	Findings Documentation	SOC Analyst
+screenshots/01-architecture/01-enterprise-soc-lab-architecture.png
