@@ -81,41 +81,92 @@ SENTINEL receives security telemetry from CITADEL, processes the events through 
 
 ## 4. Security Monitoring Architecture
 
+## 4. Security Monitoring Architecture
+
 The monitoring process follows this sequence:
 
-```text
-                         OCTOPUS
-                          Attacker
-                             │
-                             │
-              Attack / Reconnaissance Activity
-                             │
-                             ▼
-                         CITADEL
-                    Monitored Endpoint
-                             │
-                             │
-                  Logs & Security Telemetry
-                             │
-                             ▼
-                       Wazuh Agent
-                             │
-                             │
-                       Event Forwarding
-                             │
-                             ▼
-                         SENTINEL
-                       Wazuh Manager
-                             │
-                             │
-                       Alert Processing
-                             │
-                             ▼
-                     Wazuh Dashboard
-                             │
-                ┌────────────┼────────────┐
-                │            │            │
-                ▼            ▼            ▼
-             Security     Security      MITRE
-              Alerts       Events      ATT&CK
-----
+<table>
+<tr>
+<td align="center" width="25%">
+
+### OCTOPUS
+
+**Kali Linux**
+
+Attacker
+
+</td>
+
+<td align="center" width="10%">
+
+→
+
+</td>
+
+<td align="center" width="25%">
+
+### CITADEL
+
+**Ubuntu**
+
+Wazuh Agent  
+Apache HTTP Server  
+SSH
+
+</td>
+
+<td align="center" width="10%">
+
+→
+
+</td>
+
+<td align="center" width="25%">
+
+### SENTINEL
+
+**Ubuntu**
+
+Wazuh Manager  
+Wazuh Dashboard
+
+</td>
+</tr>
+</table>
+
+### Monitoring Flow
+
+**OCTOPUS**  
+Attack & Reconnaissance Activity  
+↓  
+**CITADEL**  
+Endpoint Logs & Security Telemetry  
+↓  
+**Wazuh Agent**  
+Event Collection & Forwarding  
+↓  
+**SENTINEL**  
+Wazuh Manager & Alert Processing  
+↓  
+**Wazuh Dashboard**
+
+### Security Visibility
+
+| Security Alerts | Security Events | MITRE ATT&CK |
+|:---:|:---:|:---:|
+| Detection & Alerting | Event Monitoring & Investigation | Technique Mapping |
+
+## 5. Project Objectives
+
+The main objectives of this lab are:
+
+- Deploy a centralized Wazuh SIEM environment.
+- Integrate an Ubuntu endpoint with Wazuh.
+- Monitor SSH authentication activity.
+- Monitor Apache web-server activity.
+- Perform network and web reconnaissance.
+- Simulate controlled security attacks.
+- Detect suspicious activity through Wazuh.
+- Investigate security alerts.
+- Map detected activity to MITRE ATT&CK.
+- Document the complete SOC investigation workflow.
