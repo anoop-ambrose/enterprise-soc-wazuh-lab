@@ -51,7 +51,7 @@ The Wazuh Agent configuration was updated with the address of the Wazuh Manager.
 
 After applying the configuration, the agent service was restarted.
 
-"$ sudo systemctl restart wazuh-agent"
+# $ sudo systemctl restart wazuh-agent
 
 The agent configuration and service state were then verified before continuing with the integration validation.
 
