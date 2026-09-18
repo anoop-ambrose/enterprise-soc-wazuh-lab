@@ -157,44 +157,52 @@ This type of raw-log evidence allows the analyst to correlate the SIEM event wit
 ---
 # 9. Event Correlation
 
-Incident investigation requires correlating multiple pieces of telemetry rather than relying on a single event.
+Incident investigation requires correlating related security events across the attacker, monitored endpoint, application logs, and SIEM.
 
-The lab provides several possible correlation points:
+The lab provides several examples of event correlation:
 
-### SSH Activity
+| Activity | Source | Monitored System | Telemetry Source | SIEM Analysis |
+|---|---|---|---|---|
+| SSH Authentication | OCTOPUS | CITADEL | SSH authentication logs | Wazuh |
+| Web Activity | OCTOPUS | CITADEL | Apache access logs | Wazuh |
+| Directory Enumeration | OCTOPUS | CITADEL | Apache access logs | Wazuh |
+| Security Event Investigation | Wazuh alert | CITADEL | Original event log | Analyst investigation |
 
-OCTOPUS
-↓
-SSH authentication attempts
-↓
-CITADEL authentication logs
-↓
-Wazuh
+### SSH Authentication
+
+SSH authentication attempts generated from OCTOPUS can produce authentication events on CITADEL. These events are collected by the Wazuh Agent and made available for investigation through the Wazuh Dashboard.
+
+The analyst can correlate:
+
+- Event timestamp
+- Source IP address
+- CITADEL as the affected endpoint
+- SSH authentication result
+- Wazuh rule information
+- Related authentication events
 
 ### Web Activity
 
-OCTOPUS
-↓
-HTTP requests
-↓
-Apache access logs on CITADEL
-↓
-Wazuh
+HTTP requests generated against the Apache server on CITADEL are recorded in the Apache access log.
+
+Wazuh collects the relevant Apache telemetry, allowing the analyst to examine:
+
+- Source IP address
+- HTTP method
+- Requested URL
+- HTTP response code
+- User-Agent
+- Event timestamp
+- Wazuh rule information
 
 ### Directory Enumeration
 
-OCTOPUS
-↓
-Gobuster requests
-↓
-Apache access.log
-↓
-Wazuh event
-↓
-Analyst investigation
+During the directory-enumeration exercise, OCTOPUS generated requests using Gobuster against the Apache server on CITADEL.
 
-The timestamps of related events can be compared to establish whether multiple events belong to the same activity window. 
+The resulting HTTP activity was recorded in:
 
+```text
+/var/log/apache2/access.log
 ---
 # 10. MITRE ATT&CK Context
 
