@@ -202,8 +202,8 @@ During the directory-enumeration exercise, OCTOPUS generated requests using Gobu
 
 The resulting HTTP activity was recorded in:
 
-```text
-/var/log/apache2/access.log
+### /var/log/apache2/access.log
+
 ---
 # 10. MITRE ATT&CK Context
 
