@@ -277,7 +277,7 @@ Throughout this project I gained hands-on experience with:
 
 # Author
 
-**Anoop Ambrose**
+**Anoop A A **
 
 Cybersecurity | SOC | Penetration Testing | Detection Engineering
 
