@@ -264,15 +264,15 @@ This demonstrates the ability of the SOC lab to collect authentication telemetry
 
 The following controls can help reduce exposure to SSH brute-force activity:
 
--Use strong and unique authentication credentials.
--Prefer SSH key-based authentication where appropriate.
--Disable password authentication when operationally feasible.
--Restrict SSH access to trusted networks or management hosts.
--Implement rate limiting or intrusion-prevention controls.
--Monitor repeated authentication failures.
--Review SSH configuration and authentication policies.
--Investigate unusual source IP addresses and repeated authentication attempts.
--Maintain centralized security logging and alerting.
+- Use strong and unique authentication credentials.
+- Prefer SSH key-based authentication where appropriate.
+- Disable password authentication when operationally feasible.
+- Restrict SSH access to trusted networks or management hosts.
+- Implement rate limiting or intrusion-prevention controls.
+- Monitor repeated authentication failures.
+- Review SSH configuration and authentication policies.
+- Investigate unusual source IP addresses and repeated authentication attempts.
+- Maintain centralized security logging and alerting.
 
 ---
 # 13. Investigation Summary
