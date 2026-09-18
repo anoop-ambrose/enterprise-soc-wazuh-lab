@@ -56,7 +56,7 @@ The Security Events view provides the initial starting point for identifying act
 
 ### Evidence
 
-![Wazuh Security Events Overview](../screenshots/08-investigation/01-security-events-overview.png)
+![Wazuh Security Events Overview](../screenshots/08-investigation/24-security-events-overview.png)
 
 The screenshot demonstrates the centralized collection of security events by Wazuh.
 
@@ -102,7 +102,7 @@ Relevant fields include:
 
 ### Evidence
 
-![Wazuh Alert Details](../screenshots/08-investigation/02-alert-details.png)
+![Wazuh Alert Details](../screenshots/08-investigation/25-alert-details.png)
 
 The detailed event view provides the information required to determine what occurred and which endpoint generated the telemetry.
 
