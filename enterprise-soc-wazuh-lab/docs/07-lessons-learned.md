@@ -196,7 +196,7 @@ The mapping helped describe the behavior using a standardized security framework
 However, MITRE ATT&CK information should be considered alongside the underlying event data rather than used as a replacement for investigation.
 
 ---
-12. Investigation Lessons
+# 12. Investigation Lessons
 
 The incident-investigation phase demonstrated a structured approach to analyzing security events.
 
