@@ -1,180 +1,203 @@
-🛡️ SOC Projects
-Hands-On Security Operations • Detection • Investigation • Incident Response
+# 🛡️ SOC Projects
 
-A collection of practical Security Operations Center (SOC) projects built to develop and demonstrate real-world defensive security skills — from security monitoring and SIEM operations to threat detection, investigation, and incident response.
+## Enterprise SOC Lab with Wazuh
 
-These projects are based on hands-on lab environments, simulated attack scenarios, security telemetry, detection engineering, and investigation workflows rather than purely theoretical exercises.
+A hands-on Security Operations Center (SOC) lab built to simulate **security monitoring, threat detection, alert investigation, and incident analysis** in a realistic home-lab environment.
 
-🎯 What This Repository Demonstrates
-
-This repository showcases my practical experience with:
-
-🔎 Security Monitoring & Alert Analysis
-🖥️ SIEM Deployment & Operations
-📊 Log Collection & Analysis
-🚨 Threat Detection & Investigation
-🧪 Attack Simulation & Detection Validation
-🛡️ Detection Engineering
-🔐 Authentication & Access Monitoring
-🌐 Network & Web Security Monitoring
-🐧 Linux Security Monitoring
-🪟 Windows Security Telemetry
-🧭 MITRE ATT&CK Mapping
-📝 Incident Documentation & Reporting
-🔄 Incident Response Workflows
-🚀 Featured SOC Projects
-01 — Enterprise SOC Lab with Wazuh
-
-Focus: SIEM • Security Monitoring • Detection • Investigation • MITRE ATT&CK
-
-A realistic home-lab SOC environment designed to simulate the workflow of a security analyst monitoring endpoints and investigating security events.
-
-🔧 Environment
-Component	Technology
-SIEM	Wazuh
-Attacker	Kali Linux
-Monitored Endpoint	Ubuntu Linux
-Web Server	Apache
-Virtualization	VirtualBox
-Framework	MITRE ATT&CK
-🔍 Security Scenarios
-
-The lab includes simulated attacks and security events such as:
-
-- SSH authentication attacks
-- Password-guessing activity
-- Web authentication failures
-- Directory enumeration
-- Suspicious command execution
-- Account-related security events
-- Network reconnaissance
-- Endpoint activity investigation
-- 
-🧠 Analyst Workflow
-
-Each scenario follows a practical SOC investigation workflow:
-
-Attack Simulation → Log Generation → Detection → Alert Analysis → Investigation → MITRE ATT&CK Mapping → Findings → Documentation
-
-📌 Key Skills Demonstrated
-
-Wazuh SIEM Linux Log Analysis Threat Detection MITRE ATT&CK Incident Investigation Security Monitoring
-
-👉 Explore Enterprise SOC Lab with Wazuh
+The project combines **Wazuh SIEM, Linux endpoints, attack simulation, security telemetry, detection analysis, and MITRE ATT&CK mapping** to demonstrate a practical SOC analyst workflow.
 
 ---
-🧰 SOC Toolkit
-SIEM & Monitoring
 
-Wazuh Splunk
+## 🎯 Project Overview
 
-Security Analysis
+This project was built to understand and demonstrate how a SOC analyst can:
 
-Wireshark Nmap Kali Linux
+* Monitor security events from endpoints
+* Identify suspicious activity
+* Analyze security alerts
+* Investigate authentication and system events
+* Correlate attack activity with generated telemetry
+* Map detected activity to MITRE ATT&CK
+* Document investigation findings
+* Validate detections through controlled attack simulations
 
-Operating Systems
+The goal was to build a working SOC environment rather than simply install a SIEM platform.
 
-Linux Ubuntu Windows
+---
 
-Security Frameworks
+## 🏗️ Lab Architecture
 
-MITRE ATT&CK
+| Role               | System       | Purpose                                        |
+| ------------------ | ------------ | ---------------------------------------------- |
+| SIEM Server        | Ubuntu Linux | Wazuh server, indexer and dashboard            |
+| Attacker           | Kali Linux   | Controlled attack and reconnaissance activity  |
+| Monitored Endpoint | Ubuntu Linux | Generates endpoint and security telemetry      |
+| Web Server         | Apache       | Generates web access and authentication events |
+| Virtualization     | VirtualBox   | Isolated home-lab environment                  |
 
-Scripting & Automation
+---
 
-Python Bash
+## 🔍 Security Scenarios
 
-Infrastructure
+The lab includes controlled security scenarios covering:
 
-VirtualBox Apache SSH
+* SSH authentication attacks
+* Password-guessing activity
+* Web authentication failures
+* Directory enumeration
+* Network reconnaissance
+* Suspicious command execution
+* Account-related security events
+* Endpoint activity investigation
 
-📈 Skills Demonstrated Across Projects
+These scenarios were used to generate real security telemetry and validate the monitoring and detection workflow.
 
-| SOC Capability |	Practical Exposure| 
-| SIEM Operations |	Wazuh |
-| Log Analysis |	Authentication, process & web logs |
-| Alert Triage |	Security event investigation |
-| Threat Detection | Attack simulation & detection validation |
-| Network Monitoring |	Reconnaissance & network analysis |
-| Endpoint Monitoring |  Linux endpoint telemetry | 
-| Web Security Monitoring	| Apache & authentication events |
-| Detection Engineering |	Custom detection scenarios |
-| Threat Investigation |	Event correlation & analysis |
-| MITRE ATT&CK	| Technique mapping |
-| Incident Response	| Investigation & response workflow |
-| Documentation	| Technical reports & investigation notes |
+---
 
-🧪 My Approach to SOC Labs
+## 🧠 SOC Investigation Workflow
 
-I focus on building projects around the complete defensive-security lifecycle rather than simply installing security tools.
+The project follows a structured workflow:
 
-┌─────────────────────┐
-│  Simulate Attack    │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Generate Telemetry  │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Detect the Activity │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Triage & Investigate│
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Map to MITRE ATT&CK │
-└──────────┬──────────┘
-           ↓
-┌─────────────────────┐
-│ Document Findings   │
-└─────────────────────┘
+```text
+Attack Simulation
+        ↓
+Security Event Generation
+        ↓
+Wazuh Detection
+        ↓
+Alert Triage
+        ↓
+Event Investigation
+        ↓
+MITRE ATT&CK Mapping
+        ↓
+Evidence Collection
+        ↓
+Findings & Documentation
+```
 
-This approach allows me to understand not only how an attack works, but also how a SOC analyst can detect, investigate, document, and respond to the resulting activity.
+This workflow demonstrates the transition from **security event to detection, investigation, and documented findings**.
 
-📊 Project Evidence
+---
 
-Where applicable, projects include:
+## 🛠️ Technologies Used
 
-- Architecture diagrams
-- SIEM dashboards
-- Security alerts
-- Raw security logs
-- Detection evidence
-- Investigation timelines
-- MITRE ATT&CK mappings
-- Command-line evidence
-- Attack simulation results
-- Screenshots
-- Technical documentation
-- Lessons learned
+* Wazuh
+* Ubuntu Linux
+* Kali Linux
+* Apache
+* SSH
+* VirtualBox
+* MITRE ATT&CK
+* Linux security tools
+* Network reconnaissance tools
 
-The goal is reproducibility: each project is documented so the environment, attack scenario, detection, and investigation process can be understood and recreated.
+---
 
-👨‍💻 About Me
+## 📊 SOC Skills Demonstrated
 
-I'm Anoop Ambrose, a cybersecurity professional focused on building practical skills across SOC operations, security monitoring, threat detection, incident investigation, and penetration testing.
+| Skill Area          | Practical Application                       |
+| ------------------- | ------------------------------------------- |
+| SIEM                | Wazuh deployment and monitoring             |
+| Security Monitoring | Endpoint and service activity monitoring    |
+| Log Analysis        | Authentication, process and web events      |
+| Alert Triage        | Reviewing and analyzing security alerts     |
+| Threat Detection    | Detecting simulated attack activity         |
+| Network Security    | Reconnaissance and network activity         |
+| Linux Security      | Monitoring Linux endpoint activity          |
+| Web Security        | Apache and web authentication monitoring    |
+| Investigation       | Analyzing events and attack activity        |
+| MITRE ATT&CK        | Mapping observed techniques                 |
+| Documentation       | Investigation notes and technical reporting |
 
-My current career focus is developing strong hands-on SOC capabilities and building the practical experience required to contribute effectively as a SOC Analyst.
+---
 
-Current Focus
+## 📸 Project Evidence
 
-SOC Operations • SIEM • Detection Engineering • Log Analysis • Incident Investigation • Network Security • Web Security • Linux Security
+The project documentation includes practical evidence such as:
 
-📫 Connect With Me
+* SOC architecture
+* Wazuh dashboard
+* Agent monitoring
+* Security alerts
+* Authentication events
+* Process activity
+* Web security events
+* Network reconnaissance
+* Detection results
+* Investigation evidence
+* MITRE ATT&CK mappings
+* Attack simulation results
+* Technical documentation
 
-🌐 Portfolio: anoopambrose.com
+The evidence is organized within the project documentation to show how each detection scenario was generated, detected, and investigated.
 
-💼 LinkedIn: linkedin.com/in/anoop-ambrose
+---
 
-🐙 GitHub: github.com/anoop-ambrose
+## 📂 Project Documentation
 
-⭐ Why This Repository Exists
+The complete project documentation covers:
 
-Don't just learn cybersecurity. Build it, break it, detect it, investigate it, and document it.
+1. **SOC Lab Architecture**
+2. **Wazuh Deployment**
+3. **Agent Integration**
+4. **SSH Brute-Force Detection**
+5. **Web Login Failure Detection**
+6. **Directory Enumeration Detection**
+7. **Security Event Investigation**
+8. **Lessons Learned**
 
-This repository is an evolving record of my practical SOC development — with each project designed to demonstrate measurable, hands-on security skills.
+➡️ **[View the complete Enterprise SOC Lab](./)**
 
-More projects and investigations will be added as the lab evolves.
+---
+
+## 🔎 What I Learned
+
+Building this lab provided practical experience with:
+
+* Deploying and configuring a SIEM environment
+* Integrating monitored endpoints
+* Understanding security telemetry
+* Investigating authentication events
+* Analyzing suspicious activity
+* Validating detections through attack simulation
+* Using MITRE ATT&CK to classify observed behavior
+* Documenting security investigations
+* Thinking through events from a SOC analyst perspective
+
+---
+
+## 👨‍💻 About Me
+
+I'm **Anoop Ambrose**, a cybersecurity professional developing hands-on experience in **SOC operations, SIEM, threat detection, security monitoring, incident investigation, and penetration testing**.
+
+I'm currently focused on building practical SOC capabilities through security labs, attack simulations, detection analysis, and structured investigations.
+
+### Current Focus
+
+`SOC Operations`
+`SIEM`
+`Security Monitoring`
+`Threat Detection`
+`Log Analysis`
+`Incident Investigation`
+`Network Security`
+`Linux Security`
+`Web Security`
+`MITRE ATT&CK`
+
+---
+
+## 📫 Connect With Me
+
+* 🌐 **Portfolio:** [anoopambrose.com](https://anoopambrose.com)
+* 💼 **LinkedIn:** [linkedin.com/in/anoop-ambrose](https://linkedin.com/in/anoop-ambrose)
+* 🐙 **GitHub:** [github.com/anoop-ambrose](https://github.com/anoop-ambrose)
+
+---
+
+## ⭐ Project Objective
+
+> **Build it. Break it. Detect it. Investigate it. Document it.**
+
+This project represents my practical approach to learning Security Operations — combining **attack simulation with defensive monitoring and investigation** to understand the complete security event lifecycle.
