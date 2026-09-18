@@ -161,36 +161,40 @@ Incident investigation requires correlating multiple pieces of telemetry rather 
 
 The lab provides several possible correlation points:
 
+## 9. Event Correlation
+
+The lab provides several possible correlation points:
+
 ### SSH Activity
 
 OCTOPUS
-    ↓
+↓
 SSH authentication attempts
-    ↓
+↓
 CITADEL authentication logs
-    ↓
+↓
 Wazuh
 
 ### Web Activity
 
 OCTOPUS
-    ↓
+↓
 HTTP requests
-    ↓
+↓
 Apache access logs on CITADEL
-    ↓
+↓
 Wazuh
 
 ### Directory Enumeration
 
 OCTOPUS
-    ↓
+↓
 Gobuster requests
-    ↓
+↓
 Apache access.log
-    ↓
+↓
 Wazuh event
-    ↓
+↓
 Analyst investigation
 
 The timestamps of related events can be compared to establish whether multiple events belong to the same activity window. 
