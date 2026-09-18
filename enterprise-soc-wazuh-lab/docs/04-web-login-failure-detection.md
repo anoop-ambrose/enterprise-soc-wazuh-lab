@@ -1,6 +1,6 @@
 # 04 — Web Login Failure Detection
 
-## 1. Overview
+# 1. Overview
 
 This phase demonstrates the detection and investigation of repeated failed web login activity against the Apache web application hosted on the monitored endpoint, **CITADEL**.
 
@@ -12,7 +12,7 @@ The resulting security events were reviewed through the Wazuh Dashboard to demon
 
 ---
 
-## 2. Objective
+# 2. Objective
 
 The objective of this exercise was to:
 
@@ -27,7 +27,7 @@ The objective of this exercise was to:
 
 ---
 
-## 3. Lab Environment
+# 3. Lab Environment
 
 | System | Operating System | Role |
 |---|---|---|
@@ -44,7 +44,7 @@ The Wazuh Agent on CITADEL collects relevant log activity and forwards the event
 
 ---
 
-## 4. Apache Web Server
+# 4. Apache Web Server
 
 Apache HTTP Server was configured on CITADEL as the monitored web service.
 
@@ -57,7 +57,7 @@ Run on CITADEL: $ sudo systemctl status apache2
 The service status was checked to confirm that Apache was running correctly.
 
 ---
-## 5. Web Login Activity
+# 5. Web Login Activity
 
 Controlled HTTP requests were generated against the web application to simulate unsuccessful login activity.
 
@@ -68,22 +68,22 @@ The testing activity was performed against the authorized lab environment.
 The purpose of the activity was to generate realistic web authentication telemetry for monitoring and detection.
 
 ---
-## 6. Apache Log Monitoring
+# 6. Apache Log Monitoring
 
 Apache records web requests and server activity in its log files.
 
 The primary log locations used during the exercise were: 
 
-/var/log/apache2/access.log
-/var/log/apache2/error.log
+# /var/log/apache2/access.log
+# /var/log/apache2/error.log
 
 The access log can be monitored using: 
 
-$ sudo tail -f /var/log/apache2/access.log
+# $ sudo tail -f /var/log/apache2/access.log
 
 The error log can be monitored using:
 
-sudo tail -f /var/log/apache2/error.log
+# sudo tail -f /var/log/apache2/error.log
 
 These logs provide visibility into HTTP requests, response status codes, client addresses, requested resources, and server-side errors.
 
