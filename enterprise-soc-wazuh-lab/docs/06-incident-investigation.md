@@ -310,7 +310,8 @@ The investigation can therefore be extended by reviewing:
 - Related security events
 ### Evidence
 
-The screenshot should demonstrate the MITRE ATT&CK information associated with the investigated event.
+![MITRE_INvestigation_Details](../screenshots/08-investigation/27-mitre-investigation.png)
+
 
 ---
 # 14. SOC Analyst Investigation Perspective
