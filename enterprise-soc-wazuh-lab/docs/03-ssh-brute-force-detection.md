@@ -279,8 +279,8 @@ The following controls can help reduce exposure to SSH brute-force activity:
 | Investigation Element | Observed Value                           |
 | --------------------- | ---------------------------------------- |
 | Activity              | Repeated SSH authentication attempts     |
-| Source                | OCTOPUS / `192.168.0.102`                |
-| Target                | CITADEL / `192.168.0.103`                |
+| Source                | OCTOPUS / `192.168.x.xxx`                |
+| Target                | CITADEL / `192.168.x.xxx`                |
 | Service               | SSH                                      |
 | Detection Rule        | `5758`                                   |
 | Rule Level            | `8`                                      |
