@@ -48,10 +48,7 @@ The SSH brute-force activity was simulated from OCTOPUS using **Hydra**.
 
 The attack attempted multiple password combinations against the SSH service running on CITADEL.
 
-Example command:
-
-
- ## hydra -l citadel -P /usr/share/wordlists/rockyou.txt ssh://<CITADEL-IP> -V
+Example command: $ hydra -l citadel -P /usr/share/wordlists/rockyou.txt ssh://<CITADEL-IP> -V
 
 ---
 # Command Parameters
