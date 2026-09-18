@@ -253,7 +253,7 @@ The Wazuh project is organized into investigation and documentation sections cov
 | Investigation         | Analysis of detected events     |
 | Lessons Learned       | Observations and improvements   |
 
-➡️ **[Explore the complete Enterprise SOC Lab with Wazuh](./)**
+➡️ **[Explore the complete Enterprise SOC Lab with Wazuh](./enterprise-soc-wazuh-lab)**
 
 ---
 
