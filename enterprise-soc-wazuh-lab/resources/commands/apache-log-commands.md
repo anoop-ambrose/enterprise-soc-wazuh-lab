@@ -108,3 +108,20 @@ $ sudo grep "192.168.0.102" /var/log/apache2/access.log | wc -l
  ### Monitor Access Logs During Testing
 
  $ sudo tail -f /var/log/apache2/access.log
+
+ ## 6. Apache Configuration
+ ### Check Apache Configuration Syntax
+
+ $ sudo apache2ctl configtest
+
+ ### Display Loaded Virtual Hosts
+
+ $ sudo apache2ctl -S
+
+ ### Display Apache Version
+
+ $ apache2ctl -v
+
+ ### Display Loaded Modules
+
+ $ apache2ctl -M
