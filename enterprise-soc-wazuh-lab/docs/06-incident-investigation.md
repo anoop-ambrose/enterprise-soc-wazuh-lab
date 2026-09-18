@@ -161,10 +161,6 @@ Incident investigation requires correlating multiple pieces of telemetry rather 
 
 The lab provides several possible correlation points:
 
-## 9. Event Correlation
-
-The lab provides several possible correlation points:
-
 ### SSH Activity
 
 OCTOPUS
