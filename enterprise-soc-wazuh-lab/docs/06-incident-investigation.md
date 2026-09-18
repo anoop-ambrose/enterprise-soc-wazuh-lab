@@ -155,6 +155,7 @@ with the User-Agent:
 This type of raw-log evidence allows the analyst to correlate the SIEM event with the activity that generated it.
 
 ---
+
 # 9. Event Correlation
 
 Incident investigation requires correlating related security events across the attacker, monitored endpoint, application logs, and SIEM.
