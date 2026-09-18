@@ -119,16 +119,16 @@ Detection Information
 
 Record the values shown in your actual Wazuh alert:
 
-| Field                  | Observed Value       |
-| ---------------------- | -------------------- |
-| **Agent**              | CITADEL              |
-| **Agent IP**           | `192.168.x.xxx`      |
-| **Source IP**          | `192.168.x.xxx`      |
-| **Rule ID**            | `<RULE-ID>`          |
-| **Rule Level**         | `<LEVEL>`            |
-| **Rule Description**   | `<RULE-DESCRIPTION>` |
-| **Event / Log Source** | Apache               |
-| **HTTP Request**       | `GET`                |
+| Field                  |             Observed Value                    |
+| ---------------------- | --------------------------------------------- |
+| **Agent**              | CITADEL                                       |
+| **Agent IP**           | `192.168.x.xxx`                               |
+| **Source IP**          | `192.168.x.xxx`                               |
+| **Rule ID**            | `30305`                                       |
+| **Rule Level**         | `5`                                           |
+| **Rule Description**   | `Attempt to acces forbiden file or directory` |
+| **Event / Log Source** | Apache                                        |
+| **HTTP Request**       | `GET`                                         |
 ---
 ## 9. Alert Investigation
 
@@ -301,18 +301,17 @@ The following controls can help improve web-application security monitoring:
 ---
 # 15. Investigation Summary
 
-| Investigation Element     | Observed Value              |
-| ------------------------- | --------------------------- |
-| **Activity**              | Repeated web-login failures |
-| **Source**                | `<SOURCE-IP / SYSTEM>`      |
-| **Target**                | CITADEL                     |
-| **Service**               | Apache HTTP Server          |
-| **Event Source**          | Apache logs                 |
-| **Detection Rule**        | `<RULE-ID>`                 |
-| **Rule Level**            | `<LEVEL>`                   |
-| **Detection Description** | `<RULE-DESCRIPTION>`        |
-| **HTTP Request**          | `<REQUEST>`                 |
-| **MITRE ATT&CK**          | `<IF PRESENT IN ALERT>`     |
+| Investigation Element     |                     Observed Value                 |
+| ------------------------- | -------------------------------------------------- |
+| **Activity**              | Repeated web-login failures                        |
+| **Source**                | `192.168.x.xxx`                                    |
+| **Target**                | CITADEL                                            |
+| **Service**               | Apache HTTP Server                                 |
+| **Event Source**          | Apache logs                                        |
+| **Detection Rule**        | `30305`                                            |
+| **Rule Level**            | `5`                                                |
+| **Detection Description** | `Attempt to access forbiden file or directory`     |
+| **HTTP Request**          | `GET`                                              |
 ---
 # 17. Phase Outcome
 
