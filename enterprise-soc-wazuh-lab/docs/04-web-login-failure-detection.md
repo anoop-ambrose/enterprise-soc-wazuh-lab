@@ -183,7 +183,7 @@ Screenshot:
 
 01-apache-service-running.png
 
-Location: screenshots/04-web-login-failure/01-apache-service-running.png
+Location: screenshots/06-apache-server-monitoring/16-apache-service-running.png
 
 ---
 ## Screenshot 02 — Apache Web Logs
@@ -202,7 +202,7 @@ Screenshot:
 
 02-apache-web-login-logs.png
 
-Location: screenshots/04-web-login-failure/02-apache-web-login-logs.png
+Location: screenshots/06-apache-server-monitoring/17-apache-security-logs.png
 
 ---
 ## Screenshot 03 — Wazuh Web Login Detection
@@ -223,7 +223,7 @@ Screenshot:
 
 03-wazuh-web-login-alert.png
 
-Location:  screenshots/04-web-login-failure/03-wazuh-web-login-alert.png
+Location:  screenshots/06-apache-server-monitoring/18-wazuh-apache-detection.png
 
 ---
 ## Screenshot 04 — Wazuh Alert Investigation
@@ -243,7 +243,7 @@ Screenshot:
 
 04-wazuh-web-login-investigation.png
 
-Location:  screenshots/04-web-login-failure/04-wazuh-web-login-investigation.png
+Location:  screenshots/06-apache-server-monitoring/20-apachhe-alert-investigation.png
 
 ---
 # 12. Investigation Process
